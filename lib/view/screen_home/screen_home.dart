@@ -152,7 +152,7 @@ class CharacterList extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ScreenDetail(),
+                builder: (context) => ScreenDetail(character: character),
               ),
             );
           },

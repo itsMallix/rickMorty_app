@@ -1,12 +1,11 @@
 import 'dart:convert';
 
-EpisodeResponse episodeResponseFromJson(String str) =>
-    EpisodeResponse.fromJson(json.decode(str));
+Episode episodeResponseFromJson(String str) =>
+    Episode.fromJson(json.decode(str));
 
-String episodeResponseToJson(EpisodeResponse data) =>
-    json.encode(data.toJson());
+String episodeResponseToJson(Episode data) => json.encode(data.toJson());
 
-class EpisodeResponse {
+class Episode {
   int? id;
   String? name;
   String? airDate;
@@ -15,7 +14,7 @@ class EpisodeResponse {
   String? url;
   DateTime? created;
 
-  EpisodeResponse({
+  Episode({
     this.id,
     this.name,
     this.airDate,
@@ -25,8 +24,7 @@ class EpisodeResponse {
     this.created,
   });
 
-  factory EpisodeResponse.fromJson(Map<String, dynamic> json) =>
-      EpisodeResponse(
+  factory Episode.fromJson(Map<String, dynamic> json) => Episode(
         id: json["id"],
         name: json["name"],
         airDate: json["air_date"],
