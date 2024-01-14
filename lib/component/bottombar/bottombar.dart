@@ -1,3 +1,4 @@
+import 'package:bigio_test/view/screen_character/test_screen.dart';
 import 'package:bigio_test/view/screen_favorite/screen_favorite.dart';
 import 'package:bigio_test/view/screen_home/screen_home.dart';
 import 'package:bigio_test/view/screen_search/screen_search.dart';
@@ -19,7 +20,8 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   final List<Widget> _pages = [
     const ScreenHome(),
-    const ScreenCharacter(),
+    const Test(),
+    // const ScreenCharacter(),
     const ScreenSearch(),
     const ScreenFavorite(),
   ];

@@ -18,7 +18,7 @@ class _ScreenHomeState extends State<ScreenHome> {
   void initState() {
     super.initState();
     final apiProvider = Provider.of<ApiProvider>(context, listen: false);
-    apiProvider.getCharacters();
+    apiProvider.getCharacters(1);
   }
 
   @override
