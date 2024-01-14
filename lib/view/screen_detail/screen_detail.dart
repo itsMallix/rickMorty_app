@@ -21,6 +21,7 @@ class ScreenDetail extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -70,7 +71,8 @@ class ScreenDetail extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Container(
-              padding: const EdgeInsets.all(10),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10.0),
               width: double.infinity,
               height: 100,
               child: Row(
@@ -84,8 +86,14 @@ class ScreenDetail extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            const Text("Episodes", style: TextSystem.headlineSmall),
-            ListEpisode(character: character)
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text("Episodes", style: TextSystem.headlineMedium),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: ListEpisode(character: character),
+            )
           ],
         ),
       ),
@@ -95,7 +103,7 @@ class ScreenDetail extends StatelessWidget {
   Widget buildCardData(String title, String content) {
     return Expanded(
       child: Card(
-        color: ColorSystem.darkOrange,
+        color: ColorSystem.normalBlue,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,

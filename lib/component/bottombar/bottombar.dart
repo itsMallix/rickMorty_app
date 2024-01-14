@@ -1,7 +1,6 @@
-import 'package:bigio_test/view/screen_character/test_screen.dart';
+import 'package:bigio_test/services/services_search.dart';
 import 'package:bigio_test/view/screen_favorite/screen_favorite.dart';
 import 'package:bigio_test/view/screen_home/screen_home.dart';
-import 'package:bigio_test/view/screen_search/screen_search.dart';
 import 'package:flutter/material.dart';
 import 'package:bigio_test/component/theme/color_system.dart';
 import 'package:bigio_test/component/theme/text_system.dart';
@@ -20,9 +19,8 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   final List<Widget> _pages = [
     const ScreenHome(),
-    const Test(),
-    // const ScreenCharacter(),
-    const ScreenSearch(),
+    // const Test(),
+    const ScreenCharacter(),
     const ScreenFavorite(),
   ];
 
@@ -37,16 +35,18 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: SizedBox(
-          width: 130,
-          child: Image.asset("assets/images/splashLogo.png"),
+        title: Text(
+          "Rick and Morty App",
+          style: TextSystem.headlineMedium.copyWith(color: ColorSystem.black),
         ),
-        centerTitle: true,
-
-        // title: Text(
-        //   "Ricky and Morty App",
-        //   style: TextSystem.headlineMedium.copyWith(color: ColorSystem.black),
-        // ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: SearchService());
+            },
+            icon: const Icon(Icons.search),
+          ),
+        ],
       ),
       body: PageView(
         controller: _pageController,
@@ -86,17 +86,8 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search_rounded,
-              color: _currentIndex == 2
-                  ? ColorSystem.lightPink
-                  : ColorSystem.lightGrey,
-            ),
-            label: "Search",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
               Icons.favorite_rounded,
-              color: _currentIndex == 3
+              color: _currentIndex == 2
                   ? ColorSystem.lightPink
                   : ColorSystem.lightGrey,
             ),
