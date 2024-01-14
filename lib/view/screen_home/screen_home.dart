@@ -3,7 +3,6 @@ import 'package:bigio_test/component/theme/text_system.dart';
 import 'package:bigio_test/services/services_api.dart';
 import 'package:bigio_test/view/screen_detail/screen_detail.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 class ScreenHome extends StatefulWidget {

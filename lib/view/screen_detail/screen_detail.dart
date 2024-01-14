@@ -85,6 +85,21 @@ class ScreenDetail extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10.0),
+              width: double.infinity,
+              height: 100,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  buildCardData("Gender", character.gender!),
+                  buildCardData("Type", character.type ?? "N/A"),
+                  buildCardData("Location", character.location!.name!),
+                ],
+              ),
+            ),
             const SizedBox(height: 10),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.0),
