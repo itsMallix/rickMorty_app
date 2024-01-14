@@ -1,3 +1,4 @@
+import 'package:bigio_test/component/theme/color_system.dart';
 import 'package:flutter/material.dart';
 
 class TextSystem {
@@ -8,7 +9,7 @@ class TextSystem {
     fontWeight: FontWeight.bold,
     fontSize: 24,
     letterSpacing: 0.27,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle headlineMedium = TextStyle(
@@ -16,7 +17,7 @@ class TextSystem {
     fontWeight: FontWeight.bold,
     fontSize: 20,
     letterSpacing: 0.27,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle headlineSmall = TextStyle(
@@ -24,7 +25,7 @@ class TextSystem {
     fontWeight: FontWeight.bold,
     fontSize: 16,
     letterSpacing: 0.27,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle titleLarge = TextStyle(
@@ -32,7 +33,7 @@ class TextSystem {
     fontWeight: FontWeight.bold,
     fontSize: 16,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle titleMedium = TextStyle(
@@ -40,7 +41,7 @@ class TextSystem {
     fontWeight: FontWeight.bold,
     fontSize: 14,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle titleSmall = TextStyle(
@@ -48,7 +49,7 @@ class TextSystem {
     fontWeight: FontWeight.bold,
     fontSize: 12,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle bodyLarge = TextStyle(
@@ -56,7 +57,7 @@ class TextSystem {
     fontWeight: FontWeight.w400,
     fontSize: 16,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle bodyMedium = TextStyle(
@@ -64,7 +65,7 @@ class TextSystem {
     fontWeight: FontWeight.w400,
     fontSize: 14,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle bodySmall = TextStyle(
@@ -72,7 +73,7 @@ class TextSystem {
     fontWeight: FontWeight.w400,
     fontSize: 12,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle labelLarge = TextStyle(
@@ -80,7 +81,7 @@ class TextSystem {
     fontWeight: FontWeight.w400,
     fontSize: 14,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle labelMedium = TextStyle(
@@ -88,7 +89,7 @@ class TextSystem {
     fontWeight: FontWeight.w400,
     fontSize: 12,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
   static const TextStyle labelSmall = TextStyle(
@@ -96,7 +97,9 @@ class TextSystem {
     fontWeight: FontWeight.w400,
     fontSize: 12,
     letterSpacing: 0.18,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.2,
   );
 }
+
+enum EditMode { ADD, UPDATE }

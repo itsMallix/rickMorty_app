@@ -1,5 +1,5 @@
-import 'package:bigio_test/view/screen_home/screen_home.dart';
 import 'package:flutter/material.dart';
+import 'package:bigio_test/component/bottombar/bottombar.dart';
 
 class ScreenSplash extends StatefulWidget {
   final Widget? child;
@@ -17,7 +17,7 @@ class _ScreenSplashState extends State<ScreenSplash> {
       () {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => const ScreenHome()),
+          MaterialPageRoute(builder: (context) => const BottomBarScreen()),
           (route) => false,
         );
       },
