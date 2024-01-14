@@ -1,16 +1,35 @@
-# bigio_test
+# Rick And Morty Character APP
 
-A new Flutter project.
+### Introduction
+In this challenge to intern BIGIO intern Mobile Developer, must build an android application using Rick Morty API. The app must include 3 pages, a home page, detail page, and search page.
 
-## Getting Started
+### Table Of Contents
+- [ Introduction ](#intro)
+- [ Features ](#feat)
+- [ Libraries ](#lib)
+- [ Project Structure ](#structure)
+- [ Link APK ](#link)
 
-This project is a starting point for a Flutter application.
+### Features
+- List of character
+- Detail character
+- Search character
+- Favorite character
 
-A few resources to get you started if this is your first Flutter project:
+### Libraries
+- Flutter 13 . 6 . 7
+- Provider state management
+- Http
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Project Structure
+- assets
+- lib
+  - component
+  - database
+  - helper
+  - model
+  - services
+  - view
+- main.dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Build APK
