@@ -1,4 +1,4 @@
-import 'package:bigio_test/view/splash_screen.dart';
+import 'package:bigio_test/view/screen_splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
