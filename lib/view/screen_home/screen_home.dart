@@ -11,8 +11,11 @@ class _ScreenHomeState extends State<ScreenHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: const Text("test"),
+      appBar: AppBar(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 18.0,
+        ),
       ),
     );
   }
