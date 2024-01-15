@@ -1,11 +1,11 @@
 import 'package:bigio_test/services/services_db_provider.dart';
-import 'package:bigio_test/view/screen_favorite/screen_favorite_card.dart';
+import 'package:bigio_test/view/screen_favorite/screen_favorite_list.dart';
 import 'package:bigio_test/view/screen_favorite/screen_favorite_empty.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ScreenFavorite extends StatefulWidget {
-  const ScreenFavorite({Key? key});
+  const ScreenFavorite({super.key});
 
   @override
   State<ScreenFavorite> createState() => _ScreenFavoriteState();

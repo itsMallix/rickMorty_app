@@ -3,6 +3,8 @@ import 'package:bigio_test/component/theme/text_system.dart';
 import 'package:bigio_test/helper/helper_database.dart';
 import 'package:bigio_test/model/model_character.dart';
 import 'package:bigio_test/services/services_api_provider.dart';
+import 'package:bigio_test/services/services_db_provider.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +27,24 @@ class _ScreenDetailState extends State<ScreenDetail> {
 
   Future<void> _addToFavorite() async {
     try {
+      final thisCharacter = Character(
+        id: widget.character.id,
+        name: widget.character.name,
+        status: widget.character.status,
+        species: widget.character.species,
+        type: widget.character.type,
+        gender: widget.character.gender,
+        image: widget.character.image,
+      );
+      Provider.of<DbManager>(context, listen: false).addCharacter(
+        thisCharacter.id!,
+        thisCharacter.name!,
+        thisCharacter.status!,
+        thisCharacter.species!,
+        thisCharacter.type!,
+        thisCharacter.gender!,
+        thisCharacter.image!,
+      );
       await _databaseHelper.addCharacter(
         widget.character.id!,
         widget.character.name!,
@@ -162,11 +182,11 @@ class _ScreenDetailState extends State<ScreenDetail> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 80,
+        height: 70,
         width: double.infinity,
         padding: const EdgeInsets.all(12.0),
         decoration: const BoxDecoration(
-          color: ColorSystem.lightBlue,
+          color: ColorSystem.black,
         ),
         child: GestureDetector(
           onTap: () async {
@@ -174,7 +194,7 @@ class _ScreenDetailState extends State<ScreenDetail> {
           },
           child: Container(
             width: double.infinity,
-            height: 60,
+            height: 40,
             padding: const EdgeInsets.all(12.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),

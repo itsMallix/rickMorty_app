@@ -26,7 +26,6 @@ class DbManager extends ChangeNotifier {
     String type,
     String gender,
     String image,
-    // List<String> episode,
   ) async {
     await _databaseHelper.addCharacter(
       id,
@@ -36,10 +35,8 @@ class DbManager extends ChangeNotifier {
       type,
       gender,
       image,
-      // episode,
     );
     _getAllCharacters();
-    notifyListeners();
   }
 
   Future<Character> getCharacterById(int id) async {
@@ -49,6 +46,5 @@ class DbManager extends ChangeNotifier {
   Future<void> deleteCharacter(int id) async {
     await _databaseHelper.deleteCharacter(id);
     _getAllCharacters();
-    notifyListeners();
   }
 }

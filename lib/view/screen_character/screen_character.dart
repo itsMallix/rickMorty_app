@@ -111,10 +111,13 @@ class CharacterList extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 5),
-                  Text(
-                    character.name!,
-                    style: TextSystem.headlineSmall,
-                    overflow: TextOverflow.ellipsis,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      character.name!,
+                      style: TextSystem.bodyMedium,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),

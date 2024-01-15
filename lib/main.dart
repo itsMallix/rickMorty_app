@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => DbManager(),
-        ), // Tambahkan provider untuk DbManager
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -16,7 +16,6 @@ class DatabaseHelper {
   }
 
   final String characterTable = "favoriteCharacters";
-  final String episodeTable = "favoriteCharacters";
 
   Future<Database> _initializeDb() async {
     var db = await openDatabase(
@@ -45,7 +44,6 @@ class DatabaseHelper {
     String type,
     String gender,
     String image,
-    // List<String> episode,
   ) async {
     try {
       final Database db = await database;
