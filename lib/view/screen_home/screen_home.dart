@@ -1,6 +1,7 @@
 import 'package:bigio_test/component/theme/color_system.dart';
 import 'package:bigio_test/component/theme/text_system.dart';
 import 'package:bigio_test/services/services_api_provider.dart';
+import 'package:bigio_test/view/screen_character/screen_character.dart';
 import 'package:bigio_test/view/screen_detail/screen_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -100,7 +101,14 @@ class _ScreenHomeState extends State<ScreenHome> {
                   ),
                   const Spacer(),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ScreenCharacter(),
+                        ),
+                      );
+                    },
                     child: Text(
                       "show more",
                       style: TextSystem.bodyMedium.copyWith(
