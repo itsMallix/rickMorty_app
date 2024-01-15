@@ -4,7 +4,6 @@ import 'package:bigio_test/helper/helper_database.dart';
 import 'package:bigio_test/model/model_character.dart';
 import 'package:bigio_test/services/services_api_provider.dart';
 import 'package:bigio_test/services/services_db_provider.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

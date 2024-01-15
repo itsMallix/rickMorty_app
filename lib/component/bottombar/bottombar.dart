@@ -19,7 +19,6 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   final List<Widget> _pages = [
     const ScreenHome(),
-    // const Test(),
     const ScreenCharacter(),
     const ScreenFavorite(),
   ];

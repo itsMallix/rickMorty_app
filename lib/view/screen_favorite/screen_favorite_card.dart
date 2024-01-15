@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 class FavoriteCard extends StatelessWidget {
   final Character character;
   final Function() onPressed;
-  const FavoriteCard(
-      {super.key, required this.character, required this.onPressed});
+  const FavoriteCard({
+    super.key,
+    required this.character,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -110,9 +113,6 @@ class FavoriteCard extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: onPressed,
-                            // onPressed: () {
-                            // manager.deleteCharacter(items.id!);
-                            // Navigator.pop(context);
                             child: const Text(
                               'Delete',
                             ),

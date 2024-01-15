@@ -36,14 +36,4 @@ class FavCharacterList extends StatelessWidget {
       ),
     );
   }
-
-  // ListView FavoriteCard(List<Character> favoriteItem) {
-  //   return ListView.builder(
-  //     itemCount: favoriteItem.length,
-  //     itemBuilder: (context, index) {
-  //       final items = favoriteItem[index];
-  //       return FavoriteCard(favoriteItem);
-  //     },
-  //   );
-  // }
 }
