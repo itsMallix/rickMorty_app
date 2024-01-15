@@ -48,4 +48,4 @@ In this challenge to intern BIGIO intern Mobile Developer, must build an android
 ### Build APK
 <hr/>
 
-https://drive.google.com/drive/folders 1hAGULBWfDK1uSy7GXzIYB8QUEsREgxoT?usp=sharing 
+https://drive.google.com/drive/folders/1hAGULBWfDK1uSy7GXzIYB8QUEsREgxoT?usp=drive_link 
