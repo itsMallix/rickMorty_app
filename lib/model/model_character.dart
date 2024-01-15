@@ -110,14 +110,6 @@ class Character {
             json["created"] == null ? null : DateTime.parse(json["created"]),
       );
 
-  // Map<String, dynamic> _locationToJson(Location? location) {
-  //   return location?.toJson() ?? {};
-  // }
-
-  // Map<String, dynamic> _originToJson(Location? origin) {
-  //   return origin?.toJson() ?? {};
-  // }
-
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,

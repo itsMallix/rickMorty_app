@@ -24,17 +24,33 @@ class _ScreenDetailState extends State<ScreenDetail> {
   }
 
   Future<void> _addToFavorite() async {
-    await _databaseHelper.addCharacter(
-      widget.character.id!,
-      widget.character.name!,
-    );
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          "${widget.character.name} added to favorite",
+    try {
+      await _databaseHelper.addCharacter(
+        widget.character.id!,
+        widget.character.name!,
+        widget.character.status!,
+        widget.character.species!,
+        widget.character.type!,
+        widget.character.gender!,
+        widget.character.image!,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            "${widget.character.name} added to favorites",
+          ),
         ),
-      ),
-    );
+      );
+    } catch (e) {
+      print("Error adding character to favorites: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            "${widget.character.name} is already in favorites",
+          ),
+        ),
+      );
+    }
   }
 
   @override
@@ -123,7 +139,12 @@ class _ScreenDetailState extends State<ScreenDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   buildCardData("Gender", widget.character.gender!),
-                  buildCardData("Type", widget.character.type ?? "N/A"),
+                  buildCardData(
+                    "Type",
+                    widget.character.type == ""
+                        ? "Not Available"
+                        : widget.character.type!,
+                  ),
                   buildCardData("Location", widget.character.location!.name!),
                 ],
               ),
@@ -157,7 +178,7 @@ class _ScreenDetailState extends State<ScreenDetail> {
             padding: const EdgeInsets.all(12.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.0),
-              color: ColorSystem.darkRed,
+              color: ColorSystem.normalPink,
               boxShadow: const [
                 BoxShadow(
                   color: ColorSystem.black,

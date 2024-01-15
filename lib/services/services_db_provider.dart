@@ -18,9 +18,28 @@ class DbManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> addCharacter(int id, String name) async {
-    await _databaseHelper.addCharacter(id, name);
+  Future<void> addCharacter(
+    int id,
+    String name,
+    String status,
+    String species,
+    String type,
+    String gender,
+    String image,
+    // List<String> episode,
+  ) async {
+    await _databaseHelper.addCharacter(
+      id,
+      name,
+      status,
+      species,
+      type,
+      gender,
+      image,
+      // episode,
+    );
     _getAllCharacters();
+    notifyListeners();
   }
 
   Future<Character> getCharacterById(int id) async {
@@ -30,5 +49,6 @@ class DbManager extends ChangeNotifier {
   Future<void> deleteCharacter(int id) async {
     await _databaseHelper.deleteCharacter(id);
     _getAllCharacters();
+    notifyListeners();
   }
 }

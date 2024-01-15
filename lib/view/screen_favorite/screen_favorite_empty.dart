@@ -12,7 +12,7 @@ class EmptyCharacterScreen extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 220),
+              const SizedBox(height: 150),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Image.asset(
