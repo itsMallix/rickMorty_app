@@ -97,10 +97,10 @@ class Character {
         type: json["type"],
         gender: json["gender"],
         origin:
-            json["origin"] == null ? null : Location.fromJson(json["origin"]),
-        location: json["location"] == null
+            json['origin'] == null ? null : Location.fromJson(json['origin']),
+        location: json['location'] == null
             ? null
-            : Location.fromJson(json["location"]),
+            : Location.fromJson(json['location']),
         image: json["image"],
         episode: json["episode"] == null
             ? []
@@ -110,6 +110,14 @@ class Character {
             json["created"] == null ? null : DateTime.parse(json["created"]),
       );
 
+  // Map<String, dynamic> _locationToJson(Location? location) {
+  //   return location?.toJson() ?? {};
+  // }
+
+  // Map<String, dynamic> _originToJson(Location? origin) {
+  //   return origin?.toJson() ?? {};
+  // }
+
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
@@ -117,8 +125,8 @@ class Character {
         "species": species,
         "type": type,
         "gender": gender,
-        "origin": origin?.toJson(),
-        "location": location?.toJson(),
+        "origin": origin?.toJsonString(),
+        "location": location?.toJsonString(),
         "image": image,
         "episode":
             episode == null ? [] : List<dynamic>.from(episode!.map((x) => x)),
@@ -145,4 +153,6 @@ class Location {
         "name": name,
         "url": url,
       };
+
+  String toJsonString() => json.encode(toJson());
 }

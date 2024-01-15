@@ -1,5 +1,5 @@
 import 'package:bigio_test/services/services_search.dart';
-import 'package:bigio_test/view/screen_favorite/screen_favorite.dart';
+import 'package:bigio_test/view/screen_favorite/screen_favorite_main.dart';
 import 'package:bigio_test/view/screen_home/screen_home.dart';
 import 'package:flutter/material.dart';
 import 'package:bigio_test/component/theme/color_system.dart';

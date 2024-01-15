@@ -18,8 +18,8 @@ class DbManager extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> addCharacter(Character char) async {
-    await _databaseHelper.addCharacter(char);
+  Future<void> addCharacter(int id, String name) async {
+    await _databaseHelper.addCharacter(id, name);
     _getAllCharacters();
   }
 

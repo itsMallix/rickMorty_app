@@ -24,17 +24,20 @@ class DatabaseHelper {
       version: 1,
       onCreate: (db, version) async {
         await db.execute('''CREATE TABLE $tableName(
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          name TEXT
-        )''');
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+      )''');
       },
     );
     return db;
   }
 
-  Future<void> addCharacter(Character characterModel) async {
+  Future<void> addCharacter(int id, String name) async {
     final Database db = await database;
-    await db.insert(tableName, characterModel.toJson());
+    await db.insert(tableName, {
+      'id': id,
+      'name': name,
+    });
   }
 
   Future<List<Character>> getCharacters() async {

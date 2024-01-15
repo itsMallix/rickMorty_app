@@ -1,6 +1,6 @@
 import 'package:bigio_test/component/theme/color_system.dart';
 import 'package:bigio_test/model/model_character.dart';
-import 'package:bigio_test/services/services_api.dart';
+import 'package:bigio_test/services/services_api_provider.dart';
 import 'package:bigio_test/view/screen_detail/screen_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

@@ -1,13 +1,41 @@
 import 'package:bigio_test/component/theme/color_system.dart';
 import 'package:bigio_test/component/theme/text_system.dart';
+import 'package:bigio_test/helper/helper_database.dart';
 import 'package:bigio_test/model/model_character.dart';
-import 'package:bigio_test/services/services_api.dart';
+import 'package:bigio_test/services/services_api_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ScreenDetail extends StatelessWidget {
+class ScreenDetail extends StatefulWidget {
   final Character character;
   const ScreenDetail({super.key, required this.character});
+
+  @override
+  State<ScreenDetail> createState() => _ScreenDetailState();
+}
+
+class _ScreenDetailState extends State<ScreenDetail> {
+  late DatabaseHelper _databaseHelper;
+
+  @override
+  void initState() {
+    super.initState();
+    _databaseHelper = DatabaseHelper();
+  }
+
+  Future<void> _addToFavorite() async {
+    await _databaseHelper.addCharacter(
+      widget.character.id!,
+      widget.character.name!,
+    );
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          "${widget.character.name} added to favorite",
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +57,7 @@ class ScreenDetail extends StatelessWidget {
                   width: double.infinity,
                   height: 350,
                   child: Image(
-                    image: NetworkImage(character.image!),
+                    image: NetworkImage(widget.character.image!),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -59,7 +87,7 @@ class ScreenDetail extends StatelessWidget {
                         ),
                         const SizedBox(height: 5),
                         Text(
-                          character.name!,
+                          widget.character.name!,
                           textAlign: TextAlign.center,
                           style: TextSystem.headlineLarge,
                         ),
@@ -79,9 +107,9 @@ class ScreenDetail extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  buildCardData("Status", character.status!),
-                  buildCardData("Species", character.species!),
-                  buildCardData("Origin", character.origin!.name!),
+                  buildCardData("Status", widget.character.status!),
+                  buildCardData("Species", widget.character.species!),
+                  buildCardData("Origin", widget.character.origin!.name!),
                 ],
               ),
             ),
@@ -94,9 +122,9 @@ class ScreenDetail extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  buildCardData("Gender", character.gender!),
-                  buildCardData("Type", character.type ?? "N/A"),
-                  buildCardData("Location", character.location!.name!),
+                  buildCardData("Gender", widget.character.gender!),
+                  buildCardData("Type", widget.character.type ?? "N/A"),
+                  buildCardData("Location", widget.character.location!.name!),
                 ],
               ),
             ),
@@ -107,9 +135,43 @@ class ScreenDetail extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: ListEpisode(character: character),
+              child: ListEpisode(character: widget.character),
             )
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80,
+        width: double.infinity,
+        padding: const EdgeInsets.all(12.0),
+        decoration: const BoxDecoration(
+          color: ColorSystem.lightBlue,
+        ),
+        child: GestureDetector(
+          onTap: () async {
+            _addToFavorite();
+          },
+          child: Container(
+            width: double.infinity,
+            height: 60,
+            padding: const EdgeInsets.all(12.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.0),
+              color: ColorSystem.darkRed,
+              boxShadow: const [
+                BoxShadow(
+                  color: ColorSystem.black,
+                ),
+              ],
+            ),
+            child: Center(
+                child: Text(
+              "Add To Favorites",
+              style: TextSystem.headlineSmall.copyWith(
+                color: ColorSystem.white,
+              ),
+            )),
+          ),
         ),
       ),
     );
