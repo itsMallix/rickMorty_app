@@ -93,30 +93,20 @@ class _ScreenHomeState extends State<ScreenHome> {
                 ],
               ),
               const SizedBox(height: 15),
-              Row(
-                children: [
-                  const Text(
-                    "Example Character",
-                    style: TextSystem.headlineMedium,
-                  ),
-                  const Spacer(),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ScreenCharacter(),
-                        ),
-                      );
-                    },
-                    child: Text(
-                      "show more",
-                      style: TextSystem.bodyMedium.copyWith(
-                        color: ColorSystem.normalBlue,
-                      ),
+              const Text(
+                "Example Character",
+                style: TextSystem.headlineMedium,
+              ),
+              const Spacer(),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ScreenCharacter(),
                     ),
-                  ),
-                ],
+                  );
+                },
               ),
               const SizedBox(height: 15),
               SizedBox(
