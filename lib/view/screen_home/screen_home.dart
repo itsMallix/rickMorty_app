@@ -97,17 +97,6 @@ class _ScreenHomeState extends State<ScreenHome> {
                 "Example Character",
                 style: TextSystem.headlineMedium,
               ),
-              const Spacer(),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ScreenCharacter(),
-                    ),
-                  );
-                },
-              ),
               const SizedBox(height: 15),
               SizedBox(
                 height: 150,
