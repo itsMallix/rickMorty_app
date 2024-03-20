@@ -23,6 +23,7 @@ In this challenge to intern BIGIO intern Mobile Developer, must build an android
 - Search character
 - Add favorite character
 - Remove favorite character
+- aothers
 
 ### Libraries
 <hr/>
